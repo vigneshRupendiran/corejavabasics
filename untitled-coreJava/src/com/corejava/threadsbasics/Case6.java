@@ -7,7 +7,7 @@ package com.corejava.threadsbasics;
  * 2.So the Child THREAD won't be created.
  * 3.the run() will not be initiated.
  * 4.the start() will act as a normal method call.
- * 5.ouput is always same for everytime running.
+ * 5.ouput is always same for everytime running which was executed by only MAIN THREAD.
  */
 public class Case6 {
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Case6 {
 class MyThreadCase6 extends Thread{
 //start() will acts a normal method, if we overrided here
     @Override
-    public synchronized void start() {
+    public void start() {
         for (int loop = 1; loop <= 5; loop++) {
             System.out.println(" This is start method == "+loop);
         }
